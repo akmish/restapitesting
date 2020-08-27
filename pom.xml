@@ -1,0 +1,96 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>ApiTesting</groupId>
+	<artifactId>ApiTesting</artifactId>
+	<version>0.0.1</version>
+	<name>RestAssured API Testing</name>
+	<description>This project is created to test the API using RestAssured</description>
+
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>4.3.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.1.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
+	</dependencies>
+
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>3.0.0-M3</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>integration-test</goal>
+						</goals>
+						<configuration>
+
+							<!-- UNCOMMENT - To add any exclusions if required -->
+							<!-- <excludes> <exclude>**/*IT*.java</exclude> </excludes> -->
+
+							<includes>
+
+								<!-- UNCOMMENT BELOW LINE - To execute feature files with a single 
+									runner -->
+								<include>**/apiTest01.java</include>
+								<include>**/getRequest.java</include>
+								<include>**/testEmployeeAPIs.java</include>	
+
+								<!-- UNCOMMENT BELOW LINE - To execute feature files with multiple 
+									runners -->
+								<!-- <include>**/*Runner.java</include> -->
+							</includes>
+
+							<!-- OPTIONAL UNCOMMENT BELOW 6 LINES - To set data provider thread 
+								count value. Default is 10. For executing using parallel or forking -->
+							<properties>
+								<property>
+									<name>dataproviderthreadcount</name>
+									<value>2</value>
+								</property>
+							</properties>
+
+							<!-- OPTIONAL UNCOMMENT BELOW 3 LINES - In case of multiple runners 
+								to further reduce times. For executing using parallel -->
+							<parallel>classes</parallel>
+							<threadCount>2</threadCount>
+							<perCoreThreadCount>true</perCoreThreadCount>
+
+							<!-- UNCOMMENT BELOW 3 LINES - To execute using forking option -->
+							<!-- <forkCount>2</forkCount> <reuseForks>true</reuseForks> <reportsDirectory>${project.build.directory}/failsafe-reports_${surefire.forkNumber}</reportsDirectory> -->
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
+

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="3" parallel="classes" name="APITestSuite">
+  <test thread-count="3" parallel="classes" name="APITest">
+    <classes>
+      <class name="apitesting.apiTest01"/>
+      <class name="apitesting.testEmployeeAPIs"/>
+      <class name="apitesting.getRequest"/>
+    </classes>
+  </test> <!-- APITest -->
+</suite> <!-- APITestSuite -->

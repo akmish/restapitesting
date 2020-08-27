@@ -1,4 +1,5 @@
-package apitesting;
+package com.apitesting.testcases;
+
 import org.testng.annotations.Test;
 import org.json.simple.JSONObject;
 import org.testng.Assert;

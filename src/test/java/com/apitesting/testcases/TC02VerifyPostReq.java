@@ -1,4 +1,4 @@
-package apitesting;
+package com.apitesting.testcases;
 
 import org.testng.annotations.Test;
 import org.json.simple.JSONObject;
@@ -19,26 +19,39 @@ import static org.hamcrest.Matchers.*;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TC01VerifyGetReq {
 
+public class TC02VerifyPostReq {
+	
+	static String Token;
+	
 	@Test
-	public void verifyGetAllBooksAPI() {
-
-		baseURI = "https://demoqa.com/BookStore/v1";
-
+	public void verifyPostGenerateTokenAPI() {
+		
+		baseURI = "https://demoqa.com/Account/v1";
+		
 		RequestSpecification httpRequest = RestAssured.given();
-
-		Response response = httpRequest.request(Method.GET, "/Books");
-
+		
+		JSONObject reqParam = new JSONObject();
+		
+		reqParam.put("userName", "TOOLSQA-Test");
+		reqParam.put("password", "Test@123");
+		
+		httpRequest.header("Content-Type", "application/json");
+		httpRequest.body(reqParam.toJSONString());
+		
+		Response response = httpRequest.request(Method.POST, "/GenerateToken");
+		
 		String responseBody = response.body().asString();
 
 		System.out.println(responseBody);
 
-		String statusLine = response.getStatusLine();
-		Assert.assertEquals(statusLine, "HTTP/1.1 200 OK");
+		Token = response.jsonPath().get("token");
+		String status = response.jsonPath().get("status");
+		Assert.assertEquals(status, "Success");
 
 		int statusCode = response.getStatusCode();
-		Assert.assertEquals(statusCode, 200);	
+		Assert.assertEquals(statusCode, 200);
 
 	}
+
 }

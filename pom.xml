@@ -46,6 +46,13 @@
 			<version>4.1.2</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+
 
 
 	</dependencies>
@@ -78,6 +85,7 @@
 								<include>**/apiTest01.java</include>
 								<include>**/getRequest.java</include>
 								<include>**/testEmployeeAPIs.java</include>
+								<include>**/TC*.java</include>
 
 								<!-- UNCOMMENT BELOW LINE - To execute feature files with multiple 
 									runners -->

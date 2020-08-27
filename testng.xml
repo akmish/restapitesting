@@ -3,11 +3,11 @@
 <suite thread-count="3" parallel="classes" name="APITestSuite">
   <test thread-count="3" parallel="classes" name="APITest">
     <classes>
-      <class name="apitesting.apiTest01"/>
-      <class name="apitesting.testEmployeeAPIs"/>
-      <class name="apitesting.getRequest"/>
-      <class name="apitesting.TC01VerifyGetReq"/>
-      <class name="apitesting.TC02VerifyPostReq"/>
+      <class name="com.apitesting.testcases.apiTest01"/>
+      <class name="com.apitesting.testcases.testEmployeeAPIs"/>
+      <class name="com.apitesting.testcases.getRequest"/>
+      <class name="com.apitesting.testcases.TC01VerifyGetReq"/>
+      <class name="com.apitesting.testcases.TC02VerifyPostReq"/>
     </classes>
   </test> <!-- APITest -->
 </suite> <!-- APITestSuite -->

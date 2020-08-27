@@ -1,4 +1,4 @@
-package apitesting;
+package com.apitesting.testcases;
 import org.testng.annotations.DataProvider;
 
 public class DataProviderForAPITest {

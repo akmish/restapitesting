@@ -6,6 +6,8 @@
       <class name="apitesting.apiTest01"/>
       <class name="apitesting.testEmployeeAPIs"/>
       <class name="apitesting.getRequest"/>
+      <class name="apitesting.TC01VerifyGetReq"/>
+      <class name="apitesting.TC02VerifyPostReq"/>
     </classes>
   </test> <!-- APITest -->
 </suite> <!-- APITestSuite -->

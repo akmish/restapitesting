@@ -7,5 +7,5 @@ Rest Assured
 Jenkins(Docker)
 Jenkins Job
 Jenkins Pipeline
-Terraform
+Terraform - Azure resources
 NGROK

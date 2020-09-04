@@ -94,17 +94,17 @@
 
 							<!-- OPTIONAL UNCOMMENT BELOW 6 LINES - To set data provider thread 
 								count value. Default is 10. For executing using parallel or forking -->
-							<properties>
+					<!--	<properties>
 								<property>
 									<name>dataproviderthreadcount</name>
 									<value>2</value>
 								</property>
-							</properties>
+							</properties>		-->
 
 							<!-- OPTIONAL UNCOMMENT BELOW 3 LINES - In case of multiple runners 
 								to further reduce times. For executing using parallel -->
 							<parallel>classes</parallel>
-							<threadCount>2</threadCount>
+							<threadCount>3</threadCount>
 							<perCoreThreadCount>true</perCoreThreadCount>
 
 							<!-- UNCOMMENT BELOW 3 LINES - To execute using forking option -->
